@@ -1,3 +1,7 @@
+-=(C128_Senhor notes)=-
+
+Tested: Working Video 720p, 1080p & Sound.
+
 # C128 for [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki)
 
 Based on [C64_MiSTer](https://github.com/MiSTer-devel/C64_MiSTer) by sorgelig.
