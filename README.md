@@ -4,7 +4,7 @@ Tested: Working Video 720p, 1080p & Sound.
 
 Dev notes: 
 
-In c128.sv added   
+In c128.sv added in line 66:   
 ```
 output        HDMI_BLACKOUT,
 ```
