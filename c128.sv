@@ -63,7 +63,8 @@ module emu
    input  [11:0] HDMI_WIDTH,
    input  [11:0] HDMI_HEIGHT,
    output        HDMI_FREEZE,
-
+   output        HDMI_BLACKOUT,
+	 
 `ifdef MISTER_FB
    // Use framebuffer in DDRAM
    // FB_FORMAT:
