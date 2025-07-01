@@ -9,7 +9,7 @@ In c128.sv added in line 66:
 output        HDMI_BLACKOUT,
 ```
 Issue:
-Image shaking in 80 columns mode
+Video shaking in 80 columns mode
 
 Fix: Clock swaping in sys.tcl
 
