@@ -8,6 +8,12 @@ In c128.sv added in line 66:
 ```
 output        HDMI_BLACKOUT,
 ```
+Issue:
+Image shaking in 80 columns mode
+
+Fix: Clock swaping in sys.tcl
+
+___
 # C128 for [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki)
 
 Based on [C64_MiSTer](https://github.com/MiSTer-devel/C64_MiSTer) by sorgelig.
