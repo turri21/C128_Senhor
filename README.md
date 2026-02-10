@@ -1,3 +1,16 @@
+-=(C128_Senhor notes)=-
+
+Tested: Working Video 720p, 1080p & Sound.
+
+Dev notes: 
+
+Issue:
+Video shaking in 80 columns mode
+
+Fix: Clock swaping in sys.tcl
+
+___
+
 # C128 for [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki)
 
 Based on [C64_MiSTer](https://github.com/MiSTer-devel/C64_MiSTer) by sorgelig.
