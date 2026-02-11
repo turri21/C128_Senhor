@@ -9,6 +9,8 @@ Video shaking in 80 columns mode
 
 Fix: Clock swaping in sys.tcl
 
+Important: At 720p monitor diagnostics should display 1280x720 45KHz 60Hz
+
 ___
 
 # C128 for [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki)
