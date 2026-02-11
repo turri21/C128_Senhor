@@ -115,14 +115,14 @@ module emu
    output  [1:0] AUDIO_MIX, // 0 - no mix, 1 - 25%, 2 - 50%, 3 - 100% (mono)
 
    //ADC
-   inout   [3:0] ADC_BUS,
-
-   //SD-SPI
-   output        SD_SCK,
-   output        SD_MOSI,
-   input         SD_MISO,
-   output        SD_CS,
-   input         SD_CD,
+//   inout   [3:0] ADC_BUS,
+//
+//   //SD-SPI
+//   output        SD_SCK,
+//   output        SD_MOSI,
+//   input         SD_MISO,
+//   output        SD_CS,
+//   input         SD_CD,
 
    //High latency DDR3 RAM interface
    //Use for non-critical time purposes
@@ -183,7 +183,7 @@ module emu
 );
 
 assign {DDRAM_CLK, DDRAM_BURSTCNT, DDRAM_ADDR, DDRAM_DIN, DDRAM_BE, DDRAM_RD, DDRAM_WE} = 0;
-assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
+//assign {SD_SCK, SD_MOSI, SD_CS} = 'Z;
 
 assign LED_DISK   = 0;
 assign LED_POWER  = 0;
@@ -2096,13 +2096,13 @@ always @(posedge clk_sys) act_cnt <= act_cnt + (cass_sense ? 4'd1 : 4'd8);
 wire tape_led = tap_loaded && (act_cnt[26] ? (~(~cass_sense & cass_motor) && act_cnt[25:18] > act_cnt[7:0]) : act_cnt[25:18] <= act_cnt[7:0]);
 
 wire tape_adc, tape_adc_act;
-ltc2308_tape #(.CLK_RATE(32000000)) ltc2308_tape
-(
-  .clk(clk_sys),
-  .ADC_BUS(ADC_BUS),
-  .dout(tape_adc),
-  .active(tape_adc_act)
-);
+//ltc2308_tape #(.CLK_RATE(32000000)) ltc2308_tape
+//(
+//  .clk(clk_sys),
+//  .ADC_BUS(ADC_BUS),
+//  .dout(tape_adc),
+//  .active(tape_adc_act)
+//);
 
 //------------- USER PORT -----------------
 
