@@ -196,7 +196,7 @@ assign VGA_SCALER = 0;
 // 0         1         2         3          4         5         6
 // 01234567890123456789012345678901 23456789012345678901234567890123
 // 0123456789ABCDEFGHIJKLMNOPQRSTUV 0123456789ABCDEFGHIJKLMNOPQRSTUV
-// XXXXXXXXXXXXXXXXXXXXXX XXXXXXXXX XXXXXXXXXXXXXXxxxXXXXXXXXXXXXXX
+// XXXXXXXXXXXXXXXXXXXXXX XXXXXXXXX XXXXXXXXXXXXXXxxxXXXXXXXXXXXXXXX
 
 //                                      1         1         1
 // 6     7         8         9          0         1         2
@@ -273,7 +273,8 @@ localparam CONF_STR = {
    "P2-;",
    "HCP2O[87],Internal Memory,128K,256K;",
    "P2O[52],GeoRAM,Disabled,4MB;",
-   "P2O[54:53],REU,Disabled,512KB,2MB (512KB wrap),16MB;",
+	"P2O[54:53],REU,Disabled,512KB,2MB,16MB;",
+	"hFP2O[63],REU wrap,512KB,None;",
    "P2-;",
    "P2O[43],Expansion,Joysticks,RS232;",
    "P2O[51],RS232 mode,UP9600,VIC-1011;",
@@ -515,6 +516,7 @@ hps_io #(.CONF_STR(CONF_STR), .VDNUM(2), .BLKSZ(1)) hps_io
 
    .status(status),
    .status_menumask({
+      /* F */ status[54],
       /* E */ ifr_attached,
       /* D */ cart_attached,
       /* C */ cfg_force64,
@@ -746,6 +748,7 @@ wire        reu_irq;
 
 wire        reu_oe  = IOF && reu_cfg;
 wire  [1:0] reu_cfg = status[54:53];
+wire        reu_wrap = ~status[63] & status[54];
 
 reu #(
    .REU_ADDR(REU_ADDR)
@@ -754,6 +757,7 @@ reu #(
    .clk(clk_sys),
    .reset(~reset_n),
    .cfg(reu_cfg),
+	.wrap(reu_wrap),
 
    .dma_req(dma_req),
 
