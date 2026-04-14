@@ -1,3 +1,17 @@
+-=(C128_Senhor notes)=-
+
+Tested: Working Video 720p, 1080p & Sound.
+
+Dev notes: 
+
+Issue: (not happening in the current build)
+Video shaking in 80 columns mode
+
+Fix: Clock swaping in sys.tcl
+
+Important: At 720p monitor diagnostics should display 1280x720 45KHz 60Hz
+
+___
 # C128 for [MiSTer](https://github.com/MiSTer-devel/Main_MiSTer/wiki)
 
 Based on [C64_MiSTer](https://github.com/MiSTer-devel/C64_MiSTer) by sorgelig.
